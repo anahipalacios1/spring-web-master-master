@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h3 th:text="${titulo}"></h3>
+	<table>
+		<thead>
+			<tr>
+				<th th:text="${idcursohabilitado}"></th>
+				<th th:text="${idcurso}"></th>
+				<th th:text="${idmateria}"></th>
+				<th th:text="${idprofesor}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cursohabilitado: ${cursohabilitado}">
+				<td th:text="${cursohabilitado.idcursohabilitado}"></td>
+				<td th:text="${cursohabilitado.idcurso}"></td>
+				<td th:text="${cursohabilitado.idmateria}"></td>
+				<td th:text="${cursohabilitado.idprofesor}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

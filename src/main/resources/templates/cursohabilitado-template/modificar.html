@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<form th:action="@{/cursohabilitados/modificar}" method="POST">
+		<h1 th:text="${titulo}"></h1>
+		<div>
+			<label for="idcursohabilitado">ID cursohabilitado</label>
+			<div>
+				<input type="text" name="idcursohabilitado" id="idcursohabilitado" th:value="${cursohabilitado.idcursohabilitado}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idcursohabilitado')}" th:text="${error.idcursohabilitado}"></div>
+
+		</div>		
+		<div>
+			<label for="idcurso">ID Curso</label>
+			<div>
+				<input type="text" name="idcurso" id="idcurso" th:value="${cursohabilitado.idcurso}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idcurso')}" th:text="${error.idcurso}"></div>
+
+		</div>
+		<div>
+			<label for="idmateria">ID Materia</label>
+			<div>
+				<input type="text" name="idmateria" id="idmateria" th:value="${cursohabilitado.idmateria}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idmateria')}" th:text="${error.idmateria}"></div>
+		</div>
+		<div>
+			<label for="idprofesor">ID Profesor</label>
+			<div>
+				<input type="text" name="idprofesor" id="idprofesor" th:value="${cursohabilitado.idprofesor}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idmateria')}" th:text="${error.idprofesor}"></div>
+		</div>
+		<div>
+			<div>
+				<input type="submit" value="Agregar">
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>

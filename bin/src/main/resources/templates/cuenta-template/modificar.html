@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:number="${titulo}"></title>
+</head>
+
+<body>
+	<form th:action="@{/cuentas/modificar}" method="POST">
+		<h1 th:number="${titulo}"></h1>
+		<div>
+			<label for="idcuenta">ID Cuenta</label>
+			<div>
+				<input type="number" name="idcuenta" id="idcuenta" th:value="${cuenta.idcuenta}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idcuenta')}" th:number="${error.idcuenta}"></div>
+
+		</div>
+		<div>
+			<label for="fechavencimiento">Fecha Vencimiento</label>
+			<div>
+				<input type="number" name="fechavencimiento" id="fechavencimiento" th:value="${cuenta.fechavencimiento}">
+			</div>
+			<div th:if="${error != null && error.containsKey('fechavencimiento')}" th:number="${error.fechavencimiento}"></div>
+		</div>
+		<div>
+			<label for="monto">Monto</label>
+			<div>
+				<input type="number" name="monto" id="monto" th:value="${cuenta.monto}">
+			</div>
+			<div th:if="${error != null && error.containsKey('monto')}" th:number="${error.monto}"></div>
+		</div>
+		<div>
+			<label for="pagos">Pagos</label>
+			<div>
+				<input type="number" name="pagos" id="pagos" th:value="${cuenta.pagos}">
+			</div>
+			<div th:if="${error != null && error.containsKey('monto')}" th:number="${error.pagos}"></div>
+		</div>
+		<div>
+			<div>
+				<input type="submit" value="Agregar">
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>

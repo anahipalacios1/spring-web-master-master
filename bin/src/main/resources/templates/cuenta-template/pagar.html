@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/cuentas/pagar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+		<label for="idcuenta">ID Cuenta</label>
+		<div>
+			<input type="number" name="idcuenta" id="idcuenta" th:value="${cuenta.idcuenta}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idcuenta')}" th:text="${error.idcuenta}"></div>
+
+	</div>
+	<div>
+		<label for="pagos">Pagos</label>
+		<div>
+			<input type="number" name="pagos" id="pagos" th:value="${cuenta.pagos}">
+		</div>
+		<div th:if="${error != null && error.containsKey('pagos')}" th:text="${error.pagos}"></div>
+
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Pagar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>

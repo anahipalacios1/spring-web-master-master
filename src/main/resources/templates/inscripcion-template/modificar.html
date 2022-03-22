@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:number="${titulo}"></title>
+</head>
+
+<body>
+	<form th:action="@{/inscripciones/modificar}" method="POST">
+		<h1 th:number="${titulo}"></h1>
+		<div>
+			<label for="idinscripcion">ID inscripcion</label>
+			<div>
+				<input type="number" name="idinscripcion" id="idinscripcion" th:value="${inscripcion.idinscripcion}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idinscripcion')}" th:number="${error.idinscripcion}"></div>
+
+		</div>		
+		<div>
+			<label for="idcursohabilitado">ID cursohabilitado</label>
+			<div>
+				<input type="number" name="idcursohabilitado" id="idcursohabilitado" th:value="${inscripcion.idcursohabilitado}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idcursohabilitado')}" th:number="${error.idcursohabilitado}"></div>
+
+		</div>
+		<div>
+			<label for="idalumno">ID alumno</label>
+			<div>
+				<input type="number" name="idalumno" id="idalumno" th:value="${inscripcion.idalumno}">
+			</div>
+			<div th:if="${error != null && error.containsKey('idalumno')}" th:number="${error.idalumno}"></div>
+		</div>
+		<div>
+			<div>
+				<input type="submit" value="Agregar">
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>

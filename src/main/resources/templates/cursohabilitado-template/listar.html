@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<div th:if="${cursohabilitados.isEmpty()}">No hay cursohabilitados en la lista!</div>
+	<table th:if="${not cursohabilitados.isEmpty()}">
+		<thead>
+			<tr>
+				<th th:text="${idcursohabilitado}"></th>
+				<th th:text="${idcurso}"></th>
+				<th th:text="${idmateria}"></th>
+				<th th:text="${idprofesor}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="habilitados: ${cursohabilitados}">
+				<td th:text="${habilitados.idcursohabilitado}"></td>
+				<td th:text="${habilitados.idcurso}"></td>
+				<td th:text="${habilitados.idmateria}"></td>
+				<td th:text="${habilitados.idprofesor}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

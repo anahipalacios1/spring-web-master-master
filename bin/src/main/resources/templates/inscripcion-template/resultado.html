@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h3 th:text="${titulo}"></h3>
+	<table>
+		<thead>
+			<tr>
+				<th th:text="${idinscripcion}"></th>
+				<th th:text="${idcursohabilitado}"></th>
+				<th th:text="${idalumno}"></th>
+				<th th:text="${idcuenta}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="inscripcion: ${inscripcion}">
+				<td th:text="${inscripcion.idinscripcion}"></td>
+				<td th:text="${inscripcion.idcursohabilitado}"></td>
+				<td th:text="${inscripcion.idalumno}"></td>
+				<td th:text="${idcuentaMensaje}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

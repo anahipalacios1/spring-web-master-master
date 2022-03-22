@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<div th:if="${inscripciones.isEmpty()}">No hay inscripciones en la lista!</div>
+	<table th:if="${not inscripciones.isEmpty()}">
+		<thead>
+			<tr>
+				<th th:text="${idinscripcion}"></th>
+				<th th:text="${idcursohabilitado}"></th>
+				<th th:text="${idalumno}"></th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="inscripcion: ${inscripciones}">
+				<td th:text="${inscripcion.idinscripcion}"></td>
+				<td th:text="${inscripcion.idcursohabilitado}"></td>
+				<td th:text="${inscripcion.idalumno}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

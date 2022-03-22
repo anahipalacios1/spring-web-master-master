@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/cursohabilitados/agregar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+		<label for="idcurso">ID curso</label>
+		<div>
+			<input type="number" name="idcurso" id="idcurso" th:value="${cursohabilitado.idcurso}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idcurso')}" th:text="${error.idcurso}"></div>
+		</div>
+
+	</div>
+	<div>
+		<label for="idmateria">ID Materia</label>
+		<div>
+			<input type="number" name="idmateria" id="idmateria" th:value="${cursohabilitado.idmateria}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idmateria')}" th:text="${error.idmateria}"></div>
+	</div>
+	<div>
+		<label for="idprofesor">ID Profesor</label>
+		<div>
+			<input type="number" name="idprofesor" id="idprofesor" th:value="${cursohabilitado.idprofesor}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idprofesor')}" th:text="${error.idprofesor}"></div>
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Agregar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>

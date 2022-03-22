@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/cuentas/agregar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+		<label for="idcuenta">ID curso</label>
+		<div>
+			<input type="text" name="idcuenta" id="idcuenta" th:value="${cuenta.idcuenta}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idcuenta')}" th:text="${error.idcuenta}"></div>
+		</div>
+
+	</div>
+	<div>
+		<label for="idinscripcion">ID Inscripcion</label>
+		<div>
+			<input type="text" name="idinscripcion" id="idinscripcion" th:value="${cuenta.idinscripcion}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idinscripcion')}" th:text="${error.idinscripcion}"></div>
+	</div>
+	<div>
+		<label for="fecha">Fecha</label>
+		<div>
+			<input type="text" name="fecha" id="fecha" th:value="${cuenta.fecha}">
+		</div>
+		<div th:if="${error != null && error.containsKey('fecha')}" th:text="${error.fecha}"></div>
+	</div>
+	<div>
+		<label for="fechavencimiento">Fecha Vencimiento</label>
+		<div>
+			<input type="text" name="fechavencimiento" id="fechavencimiento" th:value="${cuenta.fechavencimiento}">
+		</div>
+		<div th:if="${error != null && error.containsKey('fechavencimiento')}" th:text="${error.fechavencimiento}"></div>
+	</div>
+	<div>
+		<label for="monto">Monto</label>
+		<div>
+			<input type="text" name="monto" id="monto" th:value="${cuenta.monto}">
+		</div>
+		<div th:if="${error != null && error.containsKey('monto')}" th:text="${error.monto}"></div>
+	</div>
+	<div>
+		<label for="pagos">Pagos</label>
+		<div>
+			<input type="text" name="pagos" id="pagos" th:value="${cuenta.pagos}">
+		</div>
+		<div th:if="${error != null && error.containsKey('pagos')}" th:text="${error.pagos}"></div>
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Agregar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>

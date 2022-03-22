@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<div th:if="${materias.isEmpty()}">No hay Materias en la lista!</div>
+	<table th:if="${not materias.isEmpty()}">
+		<thead>
+			<tr>
+				<th th:text="${idmateria}"></th>
+				<th th:text="${descripcion}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="materia: ${materias}">
+				<td th:text="${materia.idmateria}"></td>
+				<td th:text="${materia.descripcion}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
